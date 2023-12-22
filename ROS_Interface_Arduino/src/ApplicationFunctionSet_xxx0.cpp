@@ -2,7 +2,7 @@
 
 extern DeviceDriverSet_Motor AppMotor;
 
-/*运动方向控制序列*/
+
 enum ConquerorCarMotionControl
 {
   Forward,       //(1)
@@ -14,8 +14,7 @@ enum ConquerorCarMotionControl
   RightForward,  //(7)
   RightBackward, //(8)
   stop_it        //(9)
-};               //direction方向:（1）、（2）、 （3）、（4）、（5）、（6）
-
+};               
 struct Application_xxx
 {
   ConquerorCarMotionControl Motion_Control;
