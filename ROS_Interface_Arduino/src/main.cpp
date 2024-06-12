@@ -20,16 +20,32 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+
+
+  Serial.print("Sensor: ");
+  Serial.println(10);
+
+  // Überprüfe, ob Daten vom Computer empfangen wurden
+  if (Serial.available() > 0) {
+    String receivedData = Serial.readStringUntil('\n');
+    // Verarbeite die empfangenen Daten
+    Serial.print("Received: ");
+    Serial.println(receivedData);
+    // Hier kannst du auf Basis der empfangenen Daten Aktionen ausführen
+  }
+  /*
   int temp =8;
-   Serial.println("Standardfall");
   if (Serial.available() > 0) { // Überprüfen, ob Daten verfügbar sind
     char receivedChar = Serial.read(); // Einlesen des empfangenen Zeichens
     
     if (isDigit(receivedChar)) { // Überprüfen, ob das Zeichen eine Ziffer ist
       temp=keyboardtrans(receivedChar - '0');
+      Serial.println(temp);
     }
   }
-  ApplicationFunctionSet_ConquerorCarMotionControl(translator(temp), 255 /*speed*/);
+  ApplicationFunctionSet_ConquerorCarMotionControl(translator(temp), 255);
+  */
   delay(1000);
 }
 
